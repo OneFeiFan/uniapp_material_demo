@@ -3,15 +3,11 @@ const SXData = {
     "--base-ratio": 1
 }
 
-function mx() {
-    return (value) => {
-        return SXData.baseRatio * value + 'px';
-    };
+function mx(value) {
+    return SXData.baseRatio * value + 'px';
 }
-function mxValue() {
-    return (value) => {
-        return SXData.baseRatio * value;
-    };
+function mxValue(value) {
+    return SXData.baseRatio * value;
 }
 
 function refresh() {

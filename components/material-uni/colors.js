@@ -65,4 +65,11 @@ function setTheme(theme) {
     global_theme = color_themes[theme] || theme_blue;
 }
 
-export { setTheme, global_theme };
+function tabActiveColor(){
+    return global_theme['--md-sys-color-on-surface'];
+}
+function tabInactiveColor(){
+    return global_theme['--md-sys-color-surface-dim'];
+}
+
+export { setTheme, global_theme,tabActiveColor,tabInactiveColor };

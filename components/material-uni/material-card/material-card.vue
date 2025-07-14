@@ -1,7 +1,7 @@
 <template>
   <touch-ripple
       class="card"
-      :style="{ 'background-color': backgroundColor, height: height, width: width }"
+      :style="{height: height, width: width }"
       :color="color"
       :opacity="opacity"
       :duration="duration"
@@ -9,15 +9,13 @@
       @click="handleClick"
   >
     <slot></slot>
-    <!-- <span class="icon-wrapper" v-if="$slots.iconRight">
-      <slot name="iconRight"/>
-    </span> -->
   </touch-ripple>
 </template>
 
 <script>
 import TouchRipple from "@/components/material-uni/ripple/component.vue";
 import sx from "@/components/material-uni/sx.vue"
+import {DEFAULT_RIPPLE_PROPS} from "@/components/material-uni/ripple/config";
 
 export default {
   mixins: [sx],
@@ -33,28 +31,9 @@ export default {
     },
     width: {
       type: String,
-      default: "100vw"
+      default: "100%"
     },
-    backgroundColor: {
-      type: String,
-      default: "#fff"
-    },
-    color: {
-      type: String,
-      default: '#000'
-    },
-    opacity: {
-      type: Number,
-      default: 1
-    },
-    duration: {
-      type: Number,
-      default: 500
-    },
-    transition: {
-      type: String,
-      default: "ease"
-    }
+    ...DEFAULT_RIPPLE_PROPS
   },
   methods: {
     handleClick() {

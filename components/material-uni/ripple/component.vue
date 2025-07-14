@@ -100,7 +100,7 @@ export default {
       event["clientY"] = event.changedTouches[0].clientY;
       this.handleMouseDown(event.changedTouches[0])
     },
-    handleMouseDown(event,type) {
+    handleMouseDown(event) {
       this.state.active = true
       const {clientX: layerX, clientY: layerY} = event
       uni.createSelectorQuery().in(this).select(".v-touch-ripple")
@@ -177,6 +177,7 @@ export default {
 <style lang="scss" scoped>
 .v-touch-ripple {
   position: relative;
+  overflow: hidden;
   //background-color: rgba(255, 255, 255, 0);
 
   :not(:last-child) {
