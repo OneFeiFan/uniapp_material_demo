@@ -21,9 +21,7 @@
 
 <script>
 import materialButton from "@/components/material-uni/material-button/material-button.vue";
-import sx from "@/components/material-uni/sx.vue";
 export default {
-  mixins: [sx],
   name: 'tag-list',
   components: {
     materialButton

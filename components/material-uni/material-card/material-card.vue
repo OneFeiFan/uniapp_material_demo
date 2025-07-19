@@ -14,14 +14,11 @@
 
 <script>
 import TouchRipple from "@/components/material-uni/ripple/component.vue";
-import sx from "@/components/material-uni/sx.vue"
 import {DEFAULT_RIPPLE_PROPS} from "@/components/material-uni/ripple/config";
 
 export default {
-  mixins: [sx],
   name: "material-card",
   components: {
-    sx,
     TouchRipple
   },
   props: {

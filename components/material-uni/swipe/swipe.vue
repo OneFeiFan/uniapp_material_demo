@@ -15,9 +15,7 @@
 </template>
 
 <script>
-import sx from "@/components/material-uni/sx.vue"
 export default {
-  mixins: [sx],
   name: 'mt-swipe',
   props: {
     defaultIndex: {type: Number, default: 0},

@@ -1,8 +1,8 @@
 <template>
-	<view class="content" :style="[theme,SXData]">
+	<scroll-view scroll-y="true" class="content" :style="[theme,SXData]">
     <material-nav-bar>
       <view class="nav-bar">
-        <uni-icons type="bars" size="" color="var(--md-sys-color-on-surface)" class="icon-left"/>
+        <uni-icons type="bars" size="" color="var(--md-sys-color-on-surface)" class="icon-left" @click="isDrawerOpen = true"/>
         <text class="title" >一个非凡</text>
         <uni-icons type="loop" size="" color="var(--md-sys-color-on-surface)" class="icon-right"/>
       </view>
@@ -15,10 +15,11 @@
           <text class="card-desc">这是一张卡片</text>
         </view>
       </material-card>
-      <material-card :height="mx(130)">
+      <material-card :height="mx(150)">
         <view class="card-content">
           <text class="card-desc">这是一堆按钮</text>
         </view>
+        <view class="button-group">
         <!-- 基础示例 -->
         <material-button backgroundColor="var(--md-sys-color-on-secondary-container)">默认按钮</material-button>
         <material-button type="filled" backgroundColor="var(--md-sys-color-on-secondary-container)">填充按钮</material-button>
@@ -85,14 +86,26 @@
             backgroundColor="var(--md-sys-color-on-secondary-container)">
           大号圆角填充按钮
         </material-button>
-
+        </view>
       </material-card>
+
+      <material-list>
+        <material-list-cell>111111s</material-list-cell>
+        <material-list-cell :right-icon="true"></material-list-cell>
+        <material-list-cell></material-list-cell>
+      </material-list>
     </main>
 
 
-
+    <drawer :value="isDrawerOpen" @onClose="() => { isDrawerOpen = false }">
+      <view class="drawer-content">
+      <material-card>
+        Hello World
+      </material-card>
+      </view>
+    </drawer>
     <material-tab-bar/>
-	</view>
+	</scroll-view>
 </template>
 
 <script>
@@ -102,8 +115,11 @@
   import MaterialTabBar from "@/components/material-uni/material-tab-bar/material-tab-bar.vue";
   import MaterialCard from "@/components/material-uni/material-card/material-card.vue";
   import MaterialButton from "@/components/material-uni/material-button/material-button.vue";
+  import MaterialList from "@/components/material-uni/material-list/material-list.vue";
+  import MaterialListCell from "@/components/material-uni/material-list-cell/material-list-cell.vue";
+  import Drawer from "@/components/material-uni/drawer/drawer.vue";
   export default {
-    components: {MaterialButton, MaterialCard, MaterialTabBar, MaterialNavBar},
+    components: {Drawer, MaterialListCell, MaterialList, MaterialButton, MaterialCard, MaterialTabBar, MaterialNavBar},
     computed: {
       SXData() {
         return SXData
@@ -114,13 +130,11 @@
     },
 		data() {
 			return {
-				title: 'Hello'
+        isDrawerOpen: false
 			}
 		},
-		onLoad() {
-		},
 		methods: {
-      mx
+      mx,
 		}
 	}
 </script>
@@ -133,6 +147,7 @@
 		justify-content: center;
 	}
   .container{
+    height: calc(100vh - sx(12) - sx(10) - var(--status-bar-height));
     padding: sx(5);
     width: 100%;
     box-sizing: border-box;
@@ -147,5 +162,12 @@
       flex-direction: column;
     }
   }
-
+.button-group{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.drawer-content{
+  margin-top: var(--status-bar-height);
+  padding: sx(5);
+}
 </style>

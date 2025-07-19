@@ -17,14 +17,12 @@
 
 <script>
 import TouchRipple from "@/components/material-uni/ripple/component.vue";
-import sx from "@/components/material-uni/sx.vue";
 import {DEFAULT_RIPPLE_PROPS} from "@/components/material-uni/ripple/config";
 import {mx} from "@/components/material-uni/sx";
 
 export default {
   name: "material-button",
   components: {
-    sx,
     TouchRipple
   },
   props: {

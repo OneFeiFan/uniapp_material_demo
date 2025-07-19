@@ -1,5 +1,5 @@
 <template>
-  <touch-ripple :color="color" :opacity="opacity" :duration="duration" :transition="transition" :backgroundColor="backgroundColor">
+  <touch-ripple :color="color" :opacity="opacity" :duration="duration" :transition="transition" :backgroundColor="backgroundColor" style="position: sticky;top:0;z-index: 9999999999">
     <status-bar :background-color="backgroundColor"/>
     <view class="nav-bar-container">
       <slot></slot>
@@ -14,13 +14,7 @@ import {DEFAULT_RIPPLE_PROPS} from "@/components/material-uni/ripple/config";
 export default {
   name: "material-nav-bar",
   components: {StatusBar, TouchRipple},
-  props: {...DEFAULT_RIPPLE_PROPS},
-
-  // data() {
-  //   return {
-  //     backgroundColor: this.backgroundColor
-  //   }
-  // }
+  props: {...DEFAULT_RIPPLE_PROPS}
 }
 </script>
 <style scoped lang="scss">
