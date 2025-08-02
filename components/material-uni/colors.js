@@ -50,9 +50,7 @@ const theme_blue = {
     "--md-sys-color-surface-container-highest": "rgb(226 226 233)"
 }
 
-const theme_red = {
-
-}
+const theme_red = {}
 
 const color_themes = {
     "blue": theme_blue,
@@ -65,11 +63,20 @@ function setTheme(theme) {
     global_theme = color_themes[theme] || theme_blue;
 }
 
-function tabActiveColor(){
+function getTheme() {
+    return global_theme;
+}
+
+function tabActiveColor() {
     return global_theme['--md-sys-color-on-surface'];
 }
-function tabInactiveColor(){
+
+function tabInactiveColor() {
     return global_theme['--md-sys-color-surface-dim'];
 }
 
-export { setTheme, global_theme,tabActiveColor,tabInactiveColor };
+function getColor(color_name) {
+    return global_theme[color_name];
+}
+
+export {setTheme, getTheme, getColor, tabActiveColor, tabInactiveColor};
