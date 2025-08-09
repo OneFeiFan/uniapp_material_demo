@@ -1,5 +1,5 @@
 <template>
-	<scroll-view scroll-y="true" class="content" :style="[theme,SXData]">
+	<scroll-view scroll-y="true" class="content" :style="[getTheme(),SXData]">
     <material-nav-bar>
       <view class="nav-bar">
         <uni-icons type="bars" size="" color="var(--md-sys-color-on-surface)" class="icon-left" @click="isDrawerOpen = true"/>
@@ -109,7 +109,7 @@
 </template>
 
 <script>
-	import {global_theme} from "@/components/material-uni/colors";
+import {getTheme} from "@/components/material-uni/colors";
   import {mx, SXData} from "@/components/material-uni/sx";
   import MaterialNavBar from "@/components/material-uni/material-nav-bar/material-nav-bar.vue";
   import MaterialTabBar from "@/components/material-uni/material-tab-bar/material-tab-bar.vue";
@@ -123,9 +123,6 @@
     computed: {
       SXData() {
         return SXData
-      },
-      theme() {
-        return global_theme
       }
     },
 		data() {
@@ -134,6 +131,7 @@
 			}
 		},
 		methods: {
+      getTheme,
       mx,
 		}
 	}

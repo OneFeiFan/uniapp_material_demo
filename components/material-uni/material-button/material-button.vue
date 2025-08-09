@@ -107,7 +107,7 @@ export default {
         filled: {
           backgroundColor: this.backgroundColor,
           color: this.fontColor,
-          boxShadow: '0px 1px 3px 1px rgba(0, 0, 0, 0.15)'
+          // boxShadow: '0px 1px 3px 1px rgba(0, 0, 0, 0.15)'
         },
         outlined: {
           background: 'transparent',
@@ -121,7 +121,7 @@ export default {
         elevated: {
           backgroundColor: 'var(--md-surface-container-low)',
           color: 'var(--md-primary)',
-          boxShadow: '0px 1px 3px 1px rgba(0, 0, 0, 0.15)'
+          // boxShadow: '0px 1px 3px 1px rgba(0, 0, 0, 0.15)'
         },
         tonal: {
           backgroundColor: 'var(--md-secondary-container)',
