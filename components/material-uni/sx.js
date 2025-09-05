@@ -4,7 +4,6 @@ const SXData = {
 }
 
 function mx(value) {
-    console.log(SXData.baseRatio * 5 + 'px')
     return SXData.baseRatio * value + 'px';
 }
 function mxValue(value) {

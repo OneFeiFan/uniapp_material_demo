@@ -1,15 +1,15 @@
 <template>
   <touch-ripple
-    class="md-button"
-    :class="[`md-${type}`, `md-${shape}`, `md-${size}`]"
-    :disabled="disabled"
-    :style="dynamicStyle"
-    :color="effectiveColor"
-    :opacity="opacity"
-    :duration="duration"
-    :transition="transition"
-    :background-color="backgroundColor"
-    @click="handleClick"
+      class="md-button"
+      :class="[`md-${type}`, `md-${shape}`, `md-${size}`]"
+      :disabled="disabled"
+      :style="dynamicStyle"
+      :color="effectiveColor"
+      :opacity="opacity"
+      :duration="duration"
+      :transition="transition"
+      :background-color="backgroundColor"
+      @click="handleClick"
   >
     <slot></slot>
   </touch-ripple>
@@ -80,8 +80,8 @@ export default {
 
       // 形状样式
       const shapeStyle = this.shape === 'pill'
-        ? { borderRadius: '999px' }
-        : { borderRadius: '8px' };
+          ? { borderRadius: '999px' }
+          : { borderRadius: '8px' };
 
       // 尺寸样式
       const sizeStyle = {

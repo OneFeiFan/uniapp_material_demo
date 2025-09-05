@@ -9,13 +9,13 @@
     </material-nav-bar>
 
     <main class="container">
-      <material-card :height="mx(50)">
+      <material-card>
         <view class="card-content">
           <text class="card-title">Hello</text>
           <text class="card-desc">这是一张卡片</text>
         </view>
       </material-card>
-      <material-card :height="mx(150)">
+      <material-card>
         <view class="card-content">
           <text class="card-desc">这是一堆按钮</text>
         </view>
