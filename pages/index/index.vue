@@ -1,5 +1,5 @@
 <template>
-	<scroll-view scroll-y="true" class="content" :style="[getTheme(),SXData]">
+  <view :style="[getTheme(),SXData]">
     <material-nav-bar>
       <view class="nav-bar">
         <uni-icons type="bars" size="" color="var(--md-sys-color-on-surface)" class="icon-left" @click="isDrawerOpen = true"/>
@@ -7,6 +7,9 @@
         <uni-icons type="loop" size="" color="var(--md-sys-color-on-surface)" class="icon-right"/>
       </view>
     </material-nav-bar>
+
+	<scroll-view scroll-y="true" class="content" >
+
 
     <main class="container">
       <material-card>
@@ -92,20 +95,22 @@
       <material-list>
         <material-list-cell>111111s</material-list-cell>
         <material-list-cell :right-icon="true"></material-list-cell>
-        <material-list-cell></material-list-cell>
+        <material-list-cell @click="() => { $refs.datePicker.open() }">
+
+        </material-list-cell>
       </material-list>
     </main>
-
-
+	</scroll-view>
+    <v-md-date-range-picker :autoApply="false" showYearSelect ref="datePicker" @change="dateChange"/>
     <drawer :value="isDrawerOpen" @onClose="() => { isDrawerOpen = false }">
       <view class="drawer-content">
-      <material-card>
-        Hello World
-      </material-card>
+        <material-card>
+          Hello World
+        </material-card>
       </view>
     </drawer>
     <material-tab-bar/>
-	</scroll-view>
+  </view>
 </template>
 
 <script>
@@ -118,8 +123,9 @@ import {getTheme} from "@/components/material-uni/colors";
   import MaterialList from "@/components/material-uni/material-list/material-list.vue";
   import MaterialListCell from "@/components/material-uni/material-list-cell/material-list-cell.vue";
   import Drawer from "@/components/material-uni/drawer/drawer.vue";
+  import VMdDateRangePicker from "@/components/material-uni/material-date-range-picker/components/Picker.vue"
   export default {
-    components: {Drawer, MaterialListCell, MaterialList, MaterialButton, MaterialCard, MaterialTabBar, MaterialNavBar},
+    components: {Drawer, MaterialListCell, MaterialList, MaterialButton, MaterialCard, MaterialTabBar, MaterialNavBar,VMdDateRangePicker},
     computed: {
       SXData() {
         return SXData
@@ -133,6 +139,10 @@ import {getTheme} from "@/components/material-uni/colors";
 		methods: {
       getTheme,
       mx,
+      dateChange(array) {
+        let dateRange = array[0].format('YYYY-MM-DD') + '/' + array[1].format('YYYY-MM-DD');
+         console.log(dateRange);
+      },
 		}
 	}
 </script>

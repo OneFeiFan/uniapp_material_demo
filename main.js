@@ -6,7 +6,9 @@ import materialTabBar from "@/components/material-uni/material-tab-bar/material-
 
 import { SvgIconLib } from '@/static/svg-icons-lib.js';
 import { SvgIconLib as MaterialFilled } from '@/uni_modules/zui-material-icons/static/material-filled.js';
+import moment from "moment";
 
+moment.locale('zh-cn');
 SvgIconLib.registerCollection("material-filled", MaterialFilled);
 
 Vue.use(materialTabBar,[
